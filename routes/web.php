@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; // pastikan ada import ini
 
@@ -23,3 +24,9 @@ Route::get('/user/create', function () {return view('create_user');});
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
 Route::post('/profile/upload', [ProfileController::class, 'uploadProfilePicture'])->name('upload.profile.picture');
+
+
+Route::get('/user', [UserController::class, 'index'])->name('user.index');
+Route::resource('users', UserController::class);
+
+Route::get('/show/{id}', [UserController::class, 'show'])->name('user.show');
