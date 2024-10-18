@@ -19,7 +19,6 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/profile', [ProfileController::class, 'profile']);
 Route::get('/user/profile', [ProfileController::class, 'profile']);
 
-
 Route::get('/user/create', function () {return view('create_user');});
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
@@ -28,5 +27,3 @@ Route::post('/profile/upload', [ProfileController::class, 'uploadProfilePicture'
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::resource('users', UserController::class);
-
-Route::get('/show/{id}', [UserController::class, 'show'])->name('user.show');
