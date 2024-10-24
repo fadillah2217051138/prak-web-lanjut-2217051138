@@ -13,12 +13,13 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color : #aliceblue;        }
+            background-color: #aliceblue;
+        }
         .profile-container {
             background-color: #083d77; /* Background container biru gelap */
             padding: 20px;
             border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
         }
@@ -28,7 +29,7 @@
             border: 4px solid #ebebd3; /* Border kuning terang */
             width: 150px;
             height: 150px;
-            object-fit: cover;
+            object-fit: cover; /* Menyesuaikan gambar agar sesuai lingkaran */
         }
         .info-item {
             background-color: #ebebd3; /* Background kotak info abu muda */
@@ -67,7 +68,8 @@
 <div class="profile-container">
     <h1>Profile User</h1>
     <div class="profile-info">
-        <img src="{{ asset($user->foto ?? 'assets/img/default-foto.jpg') }}" alt="Profile Image">
+        <!-- Menggunakan class profile-pic agar gambar sesuai lingkaran -->
+        <img src="{{ asset($user->foto ?? 'assets/img/default-foto.jpg') }}" alt="Profile Image" class="profile-pic">
         <!-- Info user -->
         <div class="info-item">Nama: {{ $user->nama }}</div>
         <div class="info-item">NPM: {{ $user->npm }}</div>
@@ -78,5 +80,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
